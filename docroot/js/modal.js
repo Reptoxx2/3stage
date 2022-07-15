@@ -3,6 +3,7 @@ let modalc = document.querySelector('.modal__content');
 let close = document.getElementById('close-but')
 let send = document.getElementById('send-but')
 let connect = document.getElementById('connection')
+let back = document.querySelector('.content__background')
 
 document.body.addEventListener("click", (event) => {
 
@@ -15,3 +16,23 @@ document.body.addEventListener("click", (event) => {
     modal.classList.add('active');
   }
 })
+
+
+let slidefade = setInterval(async () =>
+{
+
+  if (window.getComputedStyle(back).backgroundImage === 'url("http://3stage.docksal/img/slide1.png")')
+  {
+
+    back.style.backgroundImage = "url(\"http://3stage.docksal/img/slide2.png\")"
+  }
+  else if (window.getComputedStyle(back).backgroundImage === 'url("http://3stage.docksal/img/slide2.png")')
+  {
+
+    back.style.backgroundImage = "url(\"http://3stage.docksal/img/slide1.png\")"
+  }
+
+},4000)
+{
+
+}

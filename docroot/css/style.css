@@ -121,6 +121,12 @@ body {
   flex-direction: row;
   flex-shrink: 1;
 }
+.header__menu ul li {
+  cursor: pointer;
+}
+.header__menu ul li:hover {
+  text-decoration: underline;
+}
 .header__menu ul li:last-child:after {
   content: "";
   padding: 0px;
@@ -138,10 +144,21 @@ body {
   background: #f8f8f8;
 }
 .content__background {
+  transition: 0.5s;
   width: 100%;
   height: 400px;
-  background: url("../img/Слой 6 kопирова.png") no-repeat;
+  background-image: url("../img/slide1.png");
+  background-repeat: no-repeat;
   background-position: center -60px;
+  animation: show 2s infinite alternate;
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .content__Breadcrumbs-row {
   margin-bottom: 21px;
@@ -153,7 +170,11 @@ body {
   list-style: none;
 }
 .content__Breadcrumbs-row ul li {
+  cursor: pointer;
   width: auto;
+}
+.content__Breadcrumbs-row ul li:hover {
+  opacity: 0.5;
 }
 .content__Breadcrumbs-row ul li span {
   text-decoration: underline;
@@ -168,6 +189,16 @@ body {
 .content__Breadcrumbs-row ul li:last-child::after {
   content: " /";
   margin: 0;
+}
+.content__menu-ul2 li {
+  cursor: pointer;
+}
+.content__menu-ul2 li:hover {
+  opacity: 0.5;
+}
+.content__menu-ul2 li:first-child {
+  text-decoration: underline;
+  color: black;
 }
 .content__menu-ul2.active {
   list-style-type: disc;
@@ -184,6 +215,7 @@ body {
   line-height: 30px;
 }
 .content__menu-ul1 {
+  cursor: pointer;
   list-style: none;
   margin-bottom: 110px;
 }
@@ -227,7 +259,15 @@ body {
   justify-content: center;
 }
 .content__catalog-num ul li {
+  cursor: pointer;
   margin-right: 21px;
+}
+.content__catalog-num ul li:hover {
+  opacity: 0.5;
+}
+.content__catalog-num ul li.active {
+  color: #444444;
+  font-size: 18px;
 }
 .content__catalog-num ul li:last-child {
   margin: 0;
@@ -275,6 +315,12 @@ body {
 }
 .footer__menu ul {
   text-decoration: underline;
+}
+.footer__menu ul li {
+  cursor: pointer;
+}
+.footer__menu ul li:hover {
+  opacity: 0.5;
 }
 .footer__cp img {
   margin-top: 6px;
@@ -324,15 +370,24 @@ body {
   margin-bottom: 20px;
 }
 .modal__item input {
+  padding: 0px 10px;
   width: 339px;
   height: 40px;
   border: 1px solid #c3c3c3;
 }
+.modal__item input::placeholder {
+  color: #dc7f7f;
+  font-style: italic;
+}
 .modal__item textarea {
+  padding: 10px;
   width: 339px;
   height: 140px;
   resize: none;
   border: 1px solid #c3c3c3;
+}
+.modal__inp-err {
+  box-shadow: inset 0px 0px 32px -15px rgb(255, 0, 0);
 }
 .modal__close {
   margin-right: -28px;
